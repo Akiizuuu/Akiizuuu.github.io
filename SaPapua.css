@@ -1,43 +1,134 @@
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
 *{
     margin: 0;
     padding: 0;
     text-decoration: none;
-    list-style: none;
 }
 
 body{
-    background-image: url('Image/Pantai.JPG');
+    font-family: 'Times New Roman', Times, serif;
+    overflow-x: hidden;
+    background-image: url(Image/Pantai.JPG);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
 }
 
-header{
-    align-content: center;
-    height: 90px;
-    background-color: #95D1CC;
+/*Navbar*/
+nav{
+    display: flex;
+    background-color: #BE8C63;
+    justify-content: space-around;
+    height: 70px;
+    align-items: center;
 }
 
-.logo{
-    font-family: 'Lilita One', cursive;
-    font-size: 40px;
-    float: left;
-    margin: 10px 40px;
-    padding: 10px;
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 30%;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.nav li{
-    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
-    font-size: 23px;
-    float: right;
-    margin: 17px 20px;
-    padding: 10px;
+nav .nav a{
+    color: #F4DFBA;
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 5px;
+    font-size: 2em;
+    font-weight: normal;
+}
+nav ul li a{
+    color: #F4DFBA;
+    font-size: 1.2em;
 }
 
-a{
+nav ul li a:hover{
     color: #fff;
+}
+
+/*Menu burger*/
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -6px;
+    top: -5px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #F4DFBA;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+/*Hamburger menu animation*/
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: #fff;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: #fff;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+/*Responsive Condition*/
+/*Tablet*/
+@media screen and (max-width: 768px){
+    nav ul{
+        width: 50%;
+    }
+}
+/*Handphone*/
+@media screen and (max-width: 576px){
+    .menu-toggle{
+        display: flex;
+    }
+
+    nav ul{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #BE8C63;
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+    nav ul.slide{
+        opacity: 1;
+        transform: translate(0);
+    }
 }

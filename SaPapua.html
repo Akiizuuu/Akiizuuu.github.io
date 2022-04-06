@@ -14,16 +14,19 @@
             <h4><a href="#">SaPapua</a></h4>
         </div>
         <ul>
-            <li>
-                <h1><a href="">Home</a></h1>
-                <h1><a href="">Support</a></h1>
-                <h1><a href="">Team</a></h1>
-                <h1><a href="">Contact</a></h1>
-                <h1><a href="">Help</a></h1>
-            </li>
+            <li><h1><a href="">Home</a></h1></li>
+            <li><h1><a href="">Support</a></h1></li>
+            <li><h1><a href="">Team</a></h1></li>
+            <li><h1><a href="">Contact</a></h1></li>
+            <li><h1><a href="">Help</a></h1></li>
         </ul>
+        <div class="menu-btn">
+            <input type="checkbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
-
     <div class="bgvideo">
         <header id="home">
             <div class="overlay"></div>
@@ -39,6 +42,14 @@
             </div>
         </header>
     </div>
+    <script>
+        const menuToggle = document.querySelector(".menu-btn input");
+        const nav = document.querySelector("nav ul");
+
+        menuToggle.addEventListener('click', function(){
+            nav.classList.toggle('slide');
+        })
+    </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -17,117 +17,41 @@ body{
 /*Navbar*/
 nav{
     display: flex;
-    background-color: #BE8C63;
-    justify-content: space-around;
-    padding: 30px 0;
-}
-
-nav ul{
-    display: flex;
-    list-style: none;
-    width: 30%;
+    height: 80px;
     justify-content: space-between;
-    font-family: 'Montserrat', sans-serif;
-}
-
-nav .nav a{
-    color: #F4DFBA;
-    font-family: 'Pacifico', cursive;
-    letter-spacing: 5px;
-    font-size: 2em;
-    font-weight: normal;
-}
-nav ul li a{
-    color: #F4DFBA;
-    font-size: 1.2em;
-}
-
-nav ul li a:hover{
-    color: #fff;
-}
-
-/*Menu burger*/
-.menu-toggle{
-    display: none;
-    flex-direction: column;
-    height: 20px;
-    justify-content: space-between;
-    position: relative;
-}
-
-.menu-toggle input{
-    position: absolute;
-    width: 40px;
-    height: 28px;
-    left: -6px;
-    top: -5px;
-    opacity: 0;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.menu-toggle span{
-    display: block;
-    width: 28px;
-    height: 3px;
-    background-color: #F4DFBA;
-    border-radius: 10px;
-    transition: all 0.5s;
-}
-
-/*Hamburger menu animation*/
-.menu-toggle span:nth-child(2){
-    transform-origin: 0 0;
-}
-
-.menu-toggle span:nth-child(4){
-    transform-origin: 0 100%;
-}
-
-.menu-toggle input:checked ~ span:nth-child(2){
     background-color: #fff;
-    transform: rotate(45deg) translate(-1px, -1px);
 }
 
-.menu-toggle input:checked ~ span:nth-child(4){
-    background-color: #fff;
-    transform: rotate(-45deg) translate(-1px, 0);
+.nav{
+    margin: 0 45%;
+    line-height: 80px;
+    font-size: 40px;
 }
 
-.menu-toggle input:checked ~ span:nth-child(3){
-    opacity: 0;
-    transform: scale(0);
+.nav a{
+    color: rgb(90, 85, 85);
 }
 
-/*Responsive Condition*/
-/*Tablet*/
 @media screen and (max-width: 768px){
-    nav ul{
-        width: 50%;
+    nav{
+        height: 75px;
+        width: 100%;
+    }
+    .nav{
+        font-size: 40px;
+        line-height: 75px;
+        margin: 0 36%;
     }
 }
-/*Handphone*/
-@media screen and (max-width: 576px){
-    .menu-toggle{
-        display: flex;
-    }
 
-    nav ul{
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100vh;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        background-color: #BE8C63;
-        z-index: -1;
-        transform: translateX(100%);
-        transition: all 1s;
-        opacity: 0;
+@media screen and (max-width: 576px){
+    nav{
+        height: 60px;
+        width: 100%;
     }
-    nav ul.slide{
-        opacity: 1;
-        transform: translate(0);
+    .nav{
+        font-size: 40px;
+        line-height: 60px;
+        margin: 0 36%;
     }
 }
